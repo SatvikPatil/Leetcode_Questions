@@ -1,0 +1,139 @@
+#include<iostream>
+using namespace std;
+void sortcolours(int arr[], int size)
+{
+    int start = 0;
+    int end = size - 1;
+    int i = 0;
+    while (i <= end)
+    {
+        if (arr[start] == 0)
+        {
+            swap(arr[start], arr[i]);
+            start++;
+            i++;
+        }
+        else if (arr[start] == 2)
+        {
+            swap(arr[end], arr[i]);
+            end--;
+            # catch in that case
+        }
+        else if (arr[start] == 1)
+        {
+            i++;
+        }
+    }
+}
+void rotate(vector<int>& nums, int k) {
+        int n=nums.size();
+        vector<int>ans(n);
+
+        for(int i=0;i<n;i++)
+        {
+            int newindex= (i+k)%n;
+            ans[newindex]=nums[i];
+
+        }
+        nums=ans;
+    }
+    int missingnumbermeathod1(int arr[], int size){
+    sort(arr,arr+size);
+    int ans=-1;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]!=i)
+        {
+            ans=i;
+            break;
+        }
+    }
+    return ans;
+    
+}
+void printarray(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+int main(){
+# question 1) sortcolour
+    # int arr[6]={0,0,2,1,1,2};
+    # int size=6;
+# approach (1)
+# two pointer approach
+    # sortcolours(arr,6);
+    # printarray(arr,6);
+# approach(2)
+# countingzero,one and two and print one by one 
+    #   int onecount,twocount,zerocount=0;
+    # for(int i=0;i<size;i++)
+    # {
+    #     if(arr[i]==0) zerocount++;
+    #     else if(arr[i]==1) onecount++;
+    #     else twocount++;
+    #     int index=0;
+    #     while (zerocount--)
+    #     {
+    #         arr[index]=0;
+    #         index++;
+    #     }
+    #      while (onecount--)
+    #     {
+    #         arr[index]=1;
+    #         index++;
+    #     }
+    #     while (twocount--)
+    #     {
+    #         arr[index]=2;
+    #         index++;
+    #     }
+    # }           
+    # question 2) Rotate array by k times 
+    vector<int> arr{1,2,3,4,5,6,7};
+    int k=3;
+    # approach (1)
+    # modulus operater
+    rotate(arr,k);
+    printarray(arr);
+    question 3) missing number
+    #approach 1) sort and array traversing
+    int arr[9]= {9,6,4,2,3,5,7,0,1};
+    cout<<"missing number "<<missingnumber(arr,9);
+    # approach 2) by using approachg
+    
+    // int sum=0;
+    // for(int index=0;index<size;index++)
+    // {
+    //     sum=sum+arr[index];
+    // }
+    // // cout<<sum;
+    // int totalsum=  n/2*(n+1);
+    // // cout<<endl;
+    // // cout<<totalsum;
+    // cout<<"missing number in an array "<<totalsum-sum<<endl;
+    
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
